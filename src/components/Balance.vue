@@ -10,5 +10,5 @@ const props = defineProps({
 </script>
 <template>
     <h4>Your Balance</h4>
-    <h1 id="balance">${{ totalAmount }}</h1>
+    <h1 id="balance">{{ totalAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }}</h1>
 </template>>

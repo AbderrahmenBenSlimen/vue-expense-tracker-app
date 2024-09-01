@@ -22,8 +22,10 @@ const deleteTransaction = (id) => {
     <ul id="list" class="list">
         <li v-for="transaction in transactions" :key="transaction.id"
             :class="{ 'minus': transaction.amount < 0, 'plus': transaction.amount > 0 }">
-            {{ transaction.title }}<span>{{ transaction.amount }}</span><button class="delete-btn"
-                @click="deleteTransaction(transaction.id)">x</button>
+            {{ transaction.title }}<span>{{ transaction.amount.toLocaleString('en-US', {
+                style: 'currency', currency:
+                    'USD'
+            }) }}</span><button class="delete-btn" @click="deleteTransaction(transaction.id)">x</button>
         </li>
     </ul>
 </template>

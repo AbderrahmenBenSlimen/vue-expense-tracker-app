@@ -16,10 +16,15 @@ const props = defineProps({
 <template>
     <div>
         <h4>Income</h4>
-        <p id="money-plus" class="money plus">${{ incomes }}</p>
+        <p id="money-plus" class="money plus">{{ incomes.toLocaleString('en-US', {
+            style: 'currency', currency: 'USD'
+        }) }}</p>
     </div>
     <div>
         <h4>Expense</h4>
-        <p id="money-minus" class="money minus">${{ expenses }}</p>
+        <p id="money-minus" class="money minus">{{ expenses.toLocaleString('en-US', {
+            style: 'currency', currency:
+                'USD'
+        }) }}</p>
     </div>
 </template>

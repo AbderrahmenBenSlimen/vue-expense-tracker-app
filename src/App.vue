@@ -22,12 +22,12 @@ const totalAmount = computed(() => {
 
 const incomes = computed(() => {
   return transactions.value.filter(transaction => transaction.amount > 0)
-    .reduce((acc, transaction) => acc + transaction.amount, 0).toFixed(2)
+    .reduce((acc, transaction) => acc + transaction.amount, 0)
 })
 
 const expenses = computed(() => {
   return transactions.value.filter(transaction => transaction.amount < 0)
-    .reduce((acc, transaction) => acc + transaction.amount, 0).toFixed(2)
+    .reduce((acc, transaction) => acc + transaction.amount, 0)
 })
 
 const handleAdd = (formData) => {
